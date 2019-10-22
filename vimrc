@@ -60,6 +60,8 @@ endif
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+" Following example prevents popup menu from re-opening after insertion.
+inoremap <expr> <Enter> pumvisible() ? asyncomplete#close_popup() : "<Enter>"
 " To auto close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
