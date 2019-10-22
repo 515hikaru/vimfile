@@ -36,6 +36,7 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('prabirshrestha/asyncomplete-lsp.vim')
   " nerdtree
   call dein#add('scrooloose/nerdtree')
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
   " some useful pulgins
   call dein#add('tpope/vim-surround')
   call dein#add('cocopon/iceberg.vim')
