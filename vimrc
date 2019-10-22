@@ -40,6 +40,10 @@ if dein#load_state('/home/hikaru/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
+" Required:
+filetype plugin indent on
+syntax enable
+"End dein Scripts-------------------------
 
 " vim-lsp for python language server
 if executable('pyls')
@@ -58,13 +62,4 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " To auto close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Required:
-filetype plugin indent on
-syntax enable
 colorscheme iceberg
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-"End dein Scripts-------------------------
