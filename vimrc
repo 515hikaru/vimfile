@@ -34,6 +34,7 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('prabirshrestha/asyncomplete.vim')
   call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 
+  call dein#add('tpope/vim-surround')
   call dein#add('cocopon/iceberg.vim')
 
   " Required:
