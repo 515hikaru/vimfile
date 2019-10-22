@@ -29,11 +29,14 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add($HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
+  " lsp and async completion
   call dein#add('prabirshrestha/async.vim')
   call dein#add('prabirshrestha/vim-lsp')
   call dein#add('prabirshrestha/asyncomplete.vim')
   call dein#add('prabirshrestha/asyncomplete-lsp.vim')
-
+  " nerdtree
+  call dein#add('scrooloose/nerdtree')
+  " some useful pulgins
   call dein#add('tpope/vim-surround')
   call dein#add('cocopon/iceberg.vim')
 
@@ -64,5 +67,7 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 inoremap <expr> <Enter> pumvisible() ? asyncomplete#close_popup() : "<Enter>"
 " To auto close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
+" Open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 colorscheme iceberg
