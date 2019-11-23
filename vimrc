@@ -41,6 +41,10 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('tpope/vim-surround')
   call dein#add('cocopon/iceberg.vim')
 
+  " file type
+  call dein#add('godlygeek/tabular')
+  call dein#add('plasticboy/vim-markdown')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -70,5 +74,7 @@ inoremap <expr> <Enter> pumvisible() ? asyncomplete#close_popup() : "<Enter>"
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " Map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
 " colorscheme
 colorscheme iceberg
